@@ -1,0 +1,73 @@
+.network-section {
+  position: relative;
+  min-height: 250vh;
+  z-index: var(--z-content);
+  pointer-events: none;
+}
+
+.network-container {
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+.network-header {
+  margin-top: 20vh;
+  margin-bottom: 50vh;
+  text-align: right;
+  pointer-events: none;
+}
+
+.network-header .technical-text {
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.network-topology-spacer {
+  height: 50vh;
+  pointer-events: none;
+}
+
+.network-philosophy {
+  display: flex;
+  flex-direction: column;
+  gap: 40vh;
+  margin-top: 20vh;
+  margin-bottom: 40vh;
+  pointer-events: none;
+}
+
+.network-philosophy h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--color-text-primary);
+  opacity: 0.1;
+}
+
+.future-lab-hook {
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: var(--space-32);
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+  animation: pulseLab 4s infinite;
+}
+
+@keyframes pulseLab {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.2; }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,101 @@
+.media-section {
+  position: relative;
+  min-height: 100vh;
+  z-index: var(--z-content);
+  padding: var(--space-32) 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.media-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.media-header {
+  text-align: center;
+}
+
+.media-flow-concept {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-16) 0;
+  opacity: 0.6;
+}
+
+.flow-step {
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--color-text-muted);
+  border-radius: 20px;
+  font-size: var(--text-xs);
+}
+
+.flow-arrow {
+  color: var(--color-accent);
+}
+
+.media-duality {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: center;
+  margin: var(--space-16) 0;
+}
+
+@media (min-width: 768px) {
+  .media-duality {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.duality-card {
+  padding: var(--space-12);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(3,3,5,0.4);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  flex: 1;
+  transition: border-color 0.3s ease;
+}
+
+.duality-card:hover {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.duality-card h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-4);
+}
+
+.duality-connection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-accent);
+  flex: 0.5;
+}
+
+.signal-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
+}
+
+@media (min-width: 768px) {
+  .duality-connection {
+    flex-direction: row;
+  }
+  .signal-line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+  }
+}
+
+.media-archive-preview {
+  margin-top: var(--space-16);
+}

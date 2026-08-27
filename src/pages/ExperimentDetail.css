@@ -1,0 +1,103 @@
+.experiment-detail-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10vh var(--spacing-lg) 20vh;
+  background-color: transparent; /* WebGL canvas shows through */
+  pointer-events: auto;
+}
+
+.experiment-nav {
+  max-width: 800px;
+  margin: 0 auto 10vh;
+}
+
+.back-link {
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--color-text);
+}
+
+.experiment-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experiment-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.experiment-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+}
+
+.experiment-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.experiment-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.experiment-section h2 {
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.experiment-section p {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  max-width: 42rem;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-list li {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}

@@ -1,0 +1,128 @@
+.journey-section {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--space-24) 0;
+  z-index: var(--z-content);
+  overflow: hidden;
+}
+
+.journey-main-title {
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-16);
+  text-align: center;
+}
+
+.journey-path {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  padding: var(--space-16) 0;
+}
+
+.journey-path-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--color-border), transparent);
+  z-index: 1;
+}
+
+.journey-node-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding-left: 16px;
+  z-index: 2;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.journey-node-point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 15px var(--color-accent);
+  transition: transform 0.4s var(--ease-cinematic);
+}
+
+.journey-node-container:hover .journey-node-point {
+  transform: scale(2);
+}
+
+.journey-node-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.node-index {
+  color: var(--color-text-muted);
+}
+
+.node-title {
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--color-text-primary);
+  transition: color 0.4s ease;
+}
+
+.journey-node-container:hover .node-title {
+  color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+@media (min-width: 768px) {
+  .journey-path-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .journey-node-container {
+    padding-left: 0;
+    width: 50%;
+    justify-content: flex-end;
+  }
+  
+  .journey-node-container:nth-child(even) {
+    align-self: flex-start;
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .journey-node-container:nth-child(odd) {
+    align-self: flex-end;
+    padding-left: var(--space-8);
+  }
+
+  .journey-node-container:nth-child(even) {
+    padding-right: var(--space-8);
+  }
+
+  .journey-node-container:nth-child(odd) .journey-node-point {
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  .journey-node-container:nth-child(even) .journey-node-point {
+    position: absolute;
+    right: 0;
+    transform: translateX(50%);
+  }
+  
+  .journey-node-container:nth-child(odd):hover .journey-node-point {
+    transform: translateX(-50%) scale(2);
+  }
+
+  .journey-node-container:nth-child(even):hover .journey-node-point {
+    transform: translateX(50%) scale(2);
+  }
+}

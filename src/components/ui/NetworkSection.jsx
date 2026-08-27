@@ -57,6 +57,18 @@ const NetworkSection = () => {
         
         <div className="network-topology-spacer"></div>
 
+        <div className="network-concepts">
+          <h3 className="technical-text network-concepts-label">INFRASTRUCTURE THINKING</h3>
+          <div className="network-concept-tags">
+            {['TCP/IP', 'ROUTING', 'SWITCHING', 'VLANS', 'SUBNETTING', 'NETWORK SECURITY', 'TOPOLOGY DESIGN', 'PACKET ANALYSIS'].map(concept => (
+              <span key={concept} className="technical-text network-concept-tag">{concept}</span>
+            ))}
+          </div>
+          <p className="network-concept-text">
+            Network engineering shapes how I think about all digital systems — every layer of abstraction matters, every connection has a cost, and the architecture you choose determines everything that comes after.
+          </p>
+        </div>
+
         <div className="network-philosophy">
            <h2 className="display-text" ref={el => textRefs.current[0] = el}>THINK IN SYSTEMS.</h2>
            <h2 className="display-text" ref={el => textRefs.current[1] = el}>TRACE THE CONNECTION.</h2>

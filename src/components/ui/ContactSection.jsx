@@ -126,6 +126,11 @@ const ContactSection = () => {
                <span className="footer-name">{contactData.identity.name}</span>
                <span className="footer-tagline">BUILDING CONNECTIONS.</span>
             </div>
+            <nav className="footer-nav" aria-label="Footer navigation">
+              <a href="#hero" className="footer-nav-link technical-text" onClick={(e) => { e.preventDefault(); document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }); }}>TOP</a>
+              <a href="#projects" className="footer-nav-link technical-text" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>PROJECTS</a>
+              <a href="#contact" className="footer-nav-link technical-text" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>CONTACT</a>
+            </nav>
             <div className="footer-right">
                <span className="footer-year">© {new Date().getFullYear()}</span>
             </div>

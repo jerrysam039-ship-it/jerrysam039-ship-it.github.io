@@ -30,6 +30,48 @@
   pointer-events: none;
 }
 
+.network-concepts {
+  pointer-events: auto;
+  padding: var(--space-12) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-16);
+  max-width: 700px;
+  margin-left: auto;
+  text-align: right;
+}
+
+.network-concepts-label {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+}
+
+.network-concept-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+  margin-bottom: var(--space-6);
+}
+
+.network-concept-tag {
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.network-concept-text {
+  font-family: var(--font-family-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
 .network-philosophy {
   display: flex;
   flex-direction: column;

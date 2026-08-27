@@ -1,0 +1,136 @@
+.process-section {
+  position: relative;
+  padding: var(--space-24) 0;
+  z-index: var(--z-content);
+  overflow-x: clip;
+}
+
+.process-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.process-header {
+  max-width: 560px;
+}
+
+.process-eyebrow {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.process-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+}
+
+.process-intro {
+  font-family: var(--font-family-body);
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.process-steps-wrapper {
+  position: relative;
+}
+
+.process-line {
+  display: none;
+}
+
+.process-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .process-line {
+    display: block;
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-border);
+    transform-origin: left;
+    z-index: 0;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .process-step {
+    padding: var(--space-8) var(--space-4) var(--space-6) 0;
+    border-bottom: none;
+  }
+}
+
+.process-step-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+  border: 2px solid var(--color-bg-base);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: var(--space-2);
+}
+
+.process-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.process-step-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+}
+
+.process-step-label {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.process-step-description {
+  font-family: var(--font-family-body);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}

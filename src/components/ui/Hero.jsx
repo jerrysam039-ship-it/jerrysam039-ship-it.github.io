@@ -15,6 +15,11 @@ const Hero = () => {
   const statementRef = useRef(null);
   const ctaRef = useRef(null);
 
+  const scrollToProjects = () => {
+    const el = document.getElementById('projects');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       ScrollTrigger.create({
@@ -50,7 +55,7 @@ const Hero = () => {
           end: "bottom top",
           scrub: true,
         },
-        z: -200, // Move deeper into scene
+        z: -200,
         opacity: 0,
         yPercent: 20,
         ease: "none"
@@ -61,11 +66,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero-section" ref={containerRef}>
+    <section className="hero-section" ref={containerRef} id="hero">
       <div className="container hero-container">
         
         <div className="hero-image-wrapper" ref={imageRef}>
-          <img src="/Cyril.jpeg" alt="Cyril Sham J" className="hero-image" />
+          <img src="/Cyril.jpeg" alt="Cyril Sham J" className="hero-image" loading="eager" />
           <div className="hero-image-overlay"></div>
         </div>
 
@@ -79,18 +84,29 @@ const Hero = () => {
           <div className="hero-tags technical-text" ref={tagsRef}>
             <span>NETWORK ENGINEERING</span>
             <span>DIGITAL SYSTEMS</span>
+            <span>CREATIVE DEVELOPMENT</span>
           </div>
 
           <div className="hero-statement" ref={statementRef}>
-            BUILDING CONNECTIONS
+            BUILDING CONNECTIONS.
           </div>
 
           <div className="hero-cta-group" ref={ctaRef}>
-            <button className="btn-primary" data-cursor="PROJECT">
-              <span className="btn-text">EXPLORE MY WORLD</span>
+            <button
+              className="btn-primary"
+              data-cursor="PROJECT"
+              onClick={scrollToProjects}
+              aria-label="Explore my projects"
+            >
+              <span className="btn-text">EXPLORE MY WORK</span>
               <div className="btn-bg"></div>
             </button>
-            <button className="btn-secondary" data-cursor="LINK">
+            <button
+              className="btn-secondary"
+              data-cursor="LINK"
+              onClick={scrollToProjects}
+              aria-label="View my selected work"
+            >
               VIEW WORK
             </button>
           </div>

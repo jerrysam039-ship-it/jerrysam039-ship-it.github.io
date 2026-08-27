@@ -10,7 +10,9 @@ const About = () => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
   const titleRef = useRef(null);
+  const storyRef = useRef(null);
   const metaRef = useRef(null);
+  const attributesRef = useRef(null);
 
   useEffect(() => {
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -36,7 +38,18 @@ const About = () => {
 
         tl.fromTo(imageRef.current, { clipPath: 'inset(100% 0 0 0)', scale: 1.1 }, { clipPath: 'inset(0% 0 0 0)', scale: 1, duration: 1.5, ease: 'power3.out' })
           .fromTo(titleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '-=1')
-          .fromTo(metaRef.current.children, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out' }, '-=0.8');
+          .fromTo(storyRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '-=0.6')
+          .fromTo(metaRef.current.children, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out' }, '-=0.6');
+
+        if (attributesRef.current) {
+          gsap.fromTo(attributesRef.current.children,
+            { opacity: 0, y: 10 },
+            {
+              opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out',
+              scrollTrigger: { trigger: attributesRef.current, start: 'top 85%' }
+            }
+          );
+        }
 
         // Parallax scroll effect
         gsap.to(imageRef.current, {
@@ -61,7 +74,7 @@ const About = () => {
         
         <div className="about-image-column">
           <div className="about-image-wrapper" ref={imageRef} data-cursor="EXPLORE">
-            <img src="/Cyril.jpeg" alt="Cyril Sham J - Portrait" className="about-image" />
+            <img src="/Cyril.jpeg" alt="Cyril Sham J - Portrait" className="about-image" loading="lazy" />
             <div className="about-image-overlay"></div>
           </div>
         </div>
@@ -70,7 +83,19 @@ const About = () => {
           <h2 className="display-text about-title" ref={titleRef}>
             THE PERSON BEHIND THE SYSTEM
           </h2>
-          
+
+          <div className="about-story" ref={storyRef}>
+            <p className="about-paragraph">
+              I'm Cyril Sham J — a final-year Computer Science student at Loyola College of Arts and Science, Mettala, who builds digital products the same way a network engineer builds infrastructure: with precision, purpose and an understanding of how every layer connects to the next.
+            </p>
+            <p className="about-paragraph">
+              My work sits at the intersection of frontend engineering, network thinking and digital storytelling. I don't separate design from engineering — every interface I build reflects an underlying architecture, and every system I design considers its human interface.
+            </p>
+            <p className="about-paragraph">
+              I believe the best digital experiences feel inevitable — as if they could not have been built any other way.
+            </p>
+          </div>
+
           <div className="about-metadata" ref={metaRef}>
             <div className="meta-item">
               <span className="meta-label technical-text">IDENTITY</span>
@@ -92,6 +117,15 @@ const About = () => {
               <span className="meta-label technical-text">CAMPUS</span>
               <span className="meta-value">METTALA</span>
             </div>
+          </div>
+
+          <div className="about-attributes" ref={attributesRef}>
+            <span className="attribute-tag technical-text">FRONTEND ENGINEERING</span>
+            <span className="attribute-tag technical-text">NETWORK SYSTEMS</span>
+            <span className="attribute-tag technical-text">DIGITAL PRODUCTS</span>
+            <span className="attribute-tag technical-text">INTERACTIVE EXPERIENCES</span>
+            <span className="attribute-tag technical-text">WEBGL / 3D WEB</span>
+            <span className="attribute-tag technical-text">MOTION DESIGN</span>
           </div>
         </div>
 

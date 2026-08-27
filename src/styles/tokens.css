@@ -54,4 +54,22 @@
   --z-nav: 50;
   --z-cursor: 9999;
   --z-intro: 1000;
+  /* Font aliases used throughout component CSS */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-secondary: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Color aliases */
+  --color-bg: #030305;
+  --color-text: #f2f2f3;
+  --color-text-dim: #8a8a93;
+  --color-accent-muted: rgba(255, 255, 255, 0.4);
+
+  /* Spacing aliases used in Lab/Universe CSS */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 8rem;
 }

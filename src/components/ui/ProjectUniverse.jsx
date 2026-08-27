@@ -32,7 +32,7 @@ const ProjectUniverse = () => {
   }, []);
 
   return (
-    <section className="projects-section" ref={sectionRef}>
+    <section className="projects-section" ref={sectionRef} id="projects">
       <div className="container universe-container">
         
         <header className="projects-header">

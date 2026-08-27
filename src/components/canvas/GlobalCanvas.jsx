@@ -253,35 +253,13 @@ const ParticleSystem = () => {
 
 const GlobalCanvas = () => {
   const performanceTier = useStore(state => state.performanceTier);
-
-  // Disable heavy WebGL on phones to prevent mobile rendering crashes
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-  if (isMobile) {
-    return null;
-  }
-
-  const dpr =
-    performanceTier === 'HIGH'
-      ? Math.min(window.devicePixelRatio, 2)
-      : performanceTier === 'MEDIUM'
-        ? Math.min(window.devicePixelRatio, 1.5)
-        : 1;
+  const dpr = performanceTier === 'HIGH' ? Math.min(window.devicePixelRatio, 2) : 
+              performanceTier === 'MEDIUM' ? Math.min(window.devicePixelRatio, 1.5) : 1;
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: 'var(--z-canvas)',
-        pointerEvents: 'none',
-      }}
-    >
-      <Canvas
-        camera={{ position: [0, 0, 15], fov: 45 }}
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 'var(--z-canvas)', pointerEvents: 'none' }}>
+      <Canvas 
+        camera={{ position: [0, 0, 15], fov: 45 }} 
         dpr={dpr}
         eventSource={document.getElementById('root')}
         eventPrefix="client"

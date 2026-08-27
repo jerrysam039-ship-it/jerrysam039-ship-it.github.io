@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jerrysam039-ship-it.github.io/sitemap.xml
+
+# Disallow build artifacts (Vite output filenames with hashes — not needed for SPAs but good practice)
+Disallow: /assets/*.map
